@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Digital Dreamers - Landing Page",
+    "category": "Diseño Web",
+    "description": "Landing responsive que presenta nuestra marca, el equipo y nuestros valores.",
+    "details": "Creada con React, Tailwind CSS y Javascript, incluye secciones como Inicio, Sobre Nosotras, Valores y Contacto, reflejando la esencia del equipo.",
+    "image": "https://i.ibb.co/FbJZhKJ/inspiracion.jpg",
+    "screenshots": ["https://i.ibb.co/HFmpPyB/inspiracion2.jpg"],
+    "technologies": ["React", "Tailwind", "JavaScript"]
+  },
+  {
+    "id": 2,
+    "title": "Calculadora Profesional",
+    "category": "App",
+    "description": "Aplicación funcional que realiza operaciones básicas y avanzadas con una interfaz moderna.",
+    "details": "Desarrollada en React con diseño responsive y cálculos en tiempo real. Ideal para mostrar lógica y manejo de estados en React.",
+    "image": "https://i.ibb.co/fY0HQt4/calculadora.jpg",
+    "screenshots": ["https://i.ibb.co/4Yr9ktF/calculadora2.jpg"],
+    "technologies": ["React", "CSS", "JavaScript"]
+  },
+  {
+    "id": 3,
+    "title": "Página Inspiradora - Código Rosa",
+    "category": "Web",
+    "description": "Proyecto de referencia que nos inspira por su estructura limpia y moderna.",
+    "details": "Sitio web con animaciones sutiles, excelente uso del color y diseño minimalista, que sirve como guía para futuros proyectos del equipo.",
+    "image": "https://i.ibb.co/fY0HQt4/calculadora.jpg",
+    "screenshots": ["https://i.ibb.co/4Yr9ktF/calculadora2.jpg"],
+    "technologies": ["HTML", "CSS", "JavaScript"]
+  }
+]

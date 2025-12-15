@@ -1,0 +1,25 @@
+# Logs: se evita subir archivos log que solo ocupan espacio
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencias, builds y configs locales
+node_modules/
+dist/
+dist-ssr
+*.local
+
+# Archivos del editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
