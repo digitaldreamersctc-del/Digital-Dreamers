@@ -1,0 +1,16 @@
+[
+  {
+    "id": "edu-ux",
+    "category": "educativo",
+    "title": "Pack UX Educativo",
+    "details": "Curso UX + mentoría personalizada.",
+    "price": 300
+  },
+  {
+    "id": "brand-full",
+    "category": "marca",
+    "title": "Marca Colectiva Full",
+    "details": "Branding, web completa y marketing.",
+    "price": 900
+  }
+]

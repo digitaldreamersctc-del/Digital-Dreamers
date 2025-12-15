@@ -33,7 +33,7 @@ export default function NavBar() {
         px-6 py-4
       "
       >
-        {/* 1️⃣ LOGO (1 columna) */}
+        {/* 1 LOGO (1 columna) */}
         <div className="flex justify-between items-center md:col-span-1">
           <div className="text-white text-2xl font-bold">Digital Dreamers</div>
 
@@ -48,7 +48,7 @@ export default function NavBar() {
           </div>
         </div>
 
-        {/* 2️⃣ MENÚ (2 columnas desktop) */}
+        {/* 2 MENÚ (2 columnas desktop) */}
         <nav
           className={`
             md:col-span-2
@@ -76,7 +76,7 @@ export default function NavBar() {
                       `
                     px-3 py-2 
                     transition-all duration-200
-                    hover:text-[#B2A5FF]
+                    hover:text-[#cb60f1] 
                     ${
                       isActive
                         ? 'border-b-4 border-[#ffee98] text-[#ffee98]'
@@ -93,7 +93,7 @@ export default function NavBar() {
           </ul>
         </nav>
 
-        {/* 3️⃣ AUTH (1 columna) */}
+        {/* 3 AUTH (1 columna) */}
         <div
           className="
           md:col-span-1
@@ -133,7 +133,7 @@ export default function NavBar() {
           ) : (
             <Link
               to="/login"
-              className="px-3 py-1.5 rounded border-[#ffee98] border-2 text-white focus:text-[#ffee98] font-semibold text-lg hover:border-[#B2A5FF]"
+              className="px-3 py-1.5 rounded border-[#ffee98] border-2 text-white focus:text-[#ffee98] font-semibold text-lg hover:border-[#cb60f1] "
             >
               Registrarse
             </Link>

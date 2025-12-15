@@ -11,26 +11,23 @@ import {
   signInWithPopup,
   onIdTokenChanged,
 } from 'firebase/auth'
-
 import { doc, setDoc, getDoc } from 'firebase/firestore'
 import { db } from '../firebase'
-import { AuthContext } from '../context/AuthContext.js'
+import { AuthContext } from '../context/AuthContext'
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null) // incluye datos extra
-  const [loading, setLoading] = useState(true) // loading inicial
-  const [actionLoading, setActionLoading] = useState(false) // loading de acciones
+  const [user, setUser] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [actionLoading, setActionLoading] = useState(false)
   const [error, setError] = useState('')
 
   const googleProvider = new GoogleAuthProvider()
 
-  // 📌 Cargar datos extra del usuario desde Firestore
   const getUserData = async (uid) => {
     const snap = await getDoc(doc(db, 'users', uid))
     return snap.exists() ? snap.data() : {}
   }
 
-  // 📌 Registrar nuevo usuario + perfil extra en Firestore
   const register = async ({ email, password, displayName }) => {
     setError('')
     setActionLoading(true)
@@ -38,15 +35,13 @@ export function AuthProvider({ children }) {
     try {
       const cred = await createUserWithEmailAndPassword(auth, email, password)
 
-      // guardar nombre en Firebase Auth
       if (displayName) {
         await updateProfile(cred.user, { displayName })
       }
 
-      // crear documento en Firestore
       await setDoc(doc(db, 'users', cred.user.uid), {
         displayName: displayName || '',
-        role: 'user', // 👈 rol por defecto
+        role: 'user',
         createdAt: new Date(),
       })
 
@@ -59,7 +54,6 @@ export function AuthProvider({ children }) {
     }
   }
 
-  // 📌 Inicio de sesión con email/pass
   const login = async ({ email, password }) => {
     setError('')
     setActionLoading(true)
@@ -75,19 +69,17 @@ export function AuthProvider({ children }) {
     }
   }
 
-  // 📌 Login con Google OAuth
   const loginWithGoogle = async () => {
     setError('')
     setActionLoading(true)
 
     try {
       const result = await signInWithPopup(auth, googleProvider)
-
-      // si es primera vez, guardamos un perfil
-      const snap = await getDoc(doc(db, 'users', result.user.uid))
+      const ref = doc(db, 'users', result.user.uid)
+      const snap = await getDoc(ref)
 
       if (!snap.exists()) {
-        await setDoc(doc(db, 'users', result.user.uid), {
+        await setDoc(ref, {
           displayName: result.user.displayName,
           role: 'user',
           createdAt: new Date(),
@@ -103,32 +95,34 @@ export function AuthProvider({ children }) {
     }
   }
 
-  // 📌 Logout
   const logout = async () => {
     await signOut(auth)
     setUser(null)
+    localStorage.removeItem('user')
   }
 
-  // 📌 Reset password
   const resetPassword = (email) => sendPasswordResetEmail(auth, email)
 
-  // 📌 Refresh automático del token
   useEffect(() => {
     const unsub = onIdTokenChanged(auth, () => {})
-    return () => unsub()
+    return unsub
   }, [])
 
-  // 📌 Listener de sesión + datos extra + persistencia
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (u) => {
       if (u) {
         const extra = await getUserData(u.uid)
-        const mergedUser = { ...u, ...extra }
 
-        // guardar en localStorage
-        localStorage.setItem('user', JSON.stringify(mergedUser))
+        const mergedUser = {
+          uid: u.uid,
+          email: u.email,
+          displayName: u.displayName,
+          photoURL: u.photoURL,
+          ...extra,
+        }
 
         setUser(mergedUser)
+        localStorage.setItem('user', JSON.stringify(mergedUser))
       } else {
         setUser(null)
         localStorage.removeItem('user')
@@ -136,10 +130,9 @@ export function AuthProvider({ children }) {
       setLoading(false)
     })
 
-    return () => unsub()
+    return unsub
   }, [])
 
-  // 📌 Permisos basados en roles (muy útil)
   const hasRole = (role) => user?.role === role
   const isAdmin = () => user?.role === 'admin'
 

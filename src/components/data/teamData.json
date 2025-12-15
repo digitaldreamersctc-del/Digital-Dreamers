@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "name": "Sandra Charri",
+    "nickname": "Sam",
+    "role": "UX/UI Designer & Frontend Developer",
+    "story": "Inicié en el diseño gráfico y descubrí la programación como una forma de crear experiencias digitales. Gracias a programas educativos y becas tecnológicas, consolidé mis habilidades en UX/UI, desarrollo web y trabajo colaborativo.",
+    "tools": [
+      { "name": "Figma", "level": 90 },
+      { "name": "Canva", "level": 90 },
+      { "name": "VS Code", "level": 80 },
+      { "name": "GitHub", "level": 75 },
+      { "name": "Tailwind", "level": 60 }
+    ],
+    "superpower": "Aportar identidad visual a cada proyecto.",
+    "skills": ["UX Research", "UI Design", "Frontend", "Branding"]
+  },
+  {
+    "id": 2,
+    "name": "Yamileth Quispe",
+    "role": "Developer en formación",
+    "story": "La programación me enseñó a resolver problemas y crear soluciones con impacto. Cada proyecto fortalece mi lógica, creatividad y ganas de seguir aprendiendo.",
+    "tools": [
+      { "name": "HTML", "level": 80 },
+      { "name": "CSS", "level": 75 },
+      { "name": "Bootstrap", "level": 70 },
+      { "name": "VS Code", "level": 75 },
+      { "name": "Tailwind", "level": 60 }
+    ],
+    "superpower": "Aprender rápido y aportar ideas innovadoras.",
+    "skills": ["Maquetación", "Estilos CSS", "Responsive Design"]
+  },
+  {
+    "id": 3,
+    "name": "Marcell Gamboa",
+    "role": "Web Developer en formación",
+    "story": "Me inicié en programación y UX/UI con entusiasmo. Me motiva simplificar ideas complejas y crear diseños claros.",
+    "tools": [
+      { "name": "Figma", "level": 80 },
+      { "name": "Miro", "level": 75 },
+      { "name": "VS Code", "level": 70 },
+      { "name": "GitHub", "level": 65 },
+      { "name": "Tailwind", "level": 60 }
+    ],
+    "superpower": "Simplificar lo complejo y hacerlo usable.",
+    "skills": ["UX/UI Básico", "Prototipado", "Trabajo en equipo"]
+  }
+]

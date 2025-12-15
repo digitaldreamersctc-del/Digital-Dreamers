@@ -7,11 +7,11 @@ export default function Equipo() {
         <div className="text-5xl text-center text-[#281e76] font-[Concert_One]">
           <h2> Tres mentes, un mismo código 💻</h2>
         </div>
-        <div className="text-center text-[#281e76]  font-[Merienda] font-semibold text-3xl">
+        <div className="text-center text-[#493D9E]  font-[Merienda] font-semibold text-3xl">
           <h2> ¡Formamos un equipo sin igual!</h2>
         </div>
       </div>
-      <div className="flex flex-wrap justify-center gap-6 md:gap-8 px-4 md:px-24 my-12">
+      <div className="flex flex-wrap  justify-center gap-6 md:gap-8 px-4 md:px-24 my-12">
         <CardT
           name="Marcell 🌸"
           description="Especialista en diseño UI/UX, amante del detalle y la belleza en cada proyecto."

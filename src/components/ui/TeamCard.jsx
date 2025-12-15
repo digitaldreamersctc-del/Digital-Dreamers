@@ -13,7 +13,7 @@ export default function CardT({
         bg-white
         w-full sm:w-[300px] md:w-[350px] lg:w-[400px]
         rounded-2xl overflow-hidden
-        shadow-md border-r-6 border-b-2 border-[#281e76]
+        shadow-md border-l-6 border-2 border-[#281e76]
         hover:border-[#B2A5FF]
         transition-transform duration-300
         hover:-translate-y-2 hover:shadow-lg
@@ -30,8 +30,8 @@ export default function CardT({
       )}
 
       <div className="p-5 text-center sm:text-left sm:col-span-2 flex flex-col justify-center">
-        <h3 className="text-[#281e76] font-[Concert_One] text-xl">{name}</h3>
-        <p className="text-[#16123c] font-light text-lg leading-relaxed my-2">
+        <h3 className="text-[#493D9E] font-[Concert_One] text-xl">{name}</h3>
+        <p className="text-gray-800 font-light text-md leading-relaxed my-2">
           {description}
         </p>
       </div>

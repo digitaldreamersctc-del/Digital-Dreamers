@@ -1,0 +1,26 @@
+[
+  {
+    "id": "uxui",
+    "title": "UX/UI Design",
+    "description": "Diseño centrado en el usuario para productos digitales.",
+    "price": 120
+  },
+  {
+    "id": "frontend",
+    "title": "Frontend Development",
+    "description": "Interfaces modernas con React y Tailwind.",
+    "price": 150
+  },
+  {
+    "id": "backend",
+    "title": "Backend Development",
+    "description": "APIs, bases de datos y lógica del servidor.",
+    "price": 180
+  },
+  {
+    "id": "marketing",
+    "title": "Marketing & Community Manager",
+    "description": "Estrategia digital y gestión de comunidades.",
+    "price": 100
+  }
+]

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import proyectosData from '../../../components/data/proyectos.json'
 
-export default function Portafolio() {
+export default function Portfolio() {
   const [filtro, setFiltro] = useState('Todos')
 
   const categorias = ['Todos', 'Diseño Web', 'App', 'Web']
@@ -12,17 +12,17 @@ export default function Portafolio() {
       : proyectosData.filter((p) => p.category === filtro)
 
   return (
-    <section className="bg-gray-50 py-16" id="portafolio">
+    <section className="bg-gray-50 p-16">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-5xl text-center text-[#281e76] font-[Concert_One] py-4">
+        <div className="text-5xl text-center text-[#281e76] font-[Concert_One] py-2">
           <h2>🚀 Portafolio Digital Dreamers</h2>
         </div>
-        <p className="text-center text-[#281e76]  font-[Merienda] font-semibold text-xl py-4">
-          Proyectos que combinan creatividad, organización y tecnología ✨
+        <p className="text-center text-[#493D9E]  font-[Merienda] font-semibold text-xl py-2">
+          Proyectos que combinan creatividad, organización y tecnología
         </p>
 
         {/* Filtros */}
-        <div className="flex justify-center flex-wrap gap-4 mb-10 py-4">
+        <div className="flex justify-center flex-wrap gap-4 mb-10 py-10">
           {categorias.map((cat) => (
             <button
               key={cat}
@@ -30,7 +30,7 @@ export default function Portafolio() {
               className={`px-4 py-2 rounded-full font-medium transition ${
                 filtro === cat
                   ? 'bg-[#281e76] text-white'
-                  : 'bg-white text-[#281e76] border border-[#281e76] hover:bg-[#B2A5FF]'
+                  : 'bg-white text-[#493D9E] border border-[#281e76] hover:bg-[#B2A5FF]'
               }`}
             >
               {cat}
@@ -52,11 +52,14 @@ export default function Portafolio() {
               />
 
               <div className="p-5">
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                <h3 className="text-xl font-semibold text-[#493D9E] mb-2">
                   {proyecto.title}
                 </h3>
 
-                <p className="text-gray-600 mb-3 text-sm">
+                <div className="absolute left-3 top-3 bg-white/70 text-sm px-3 py-1 rounded-full backdrop-blur">
+                  {proyecto.category}
+                </div>
+                <p className="text-gray-700 mb-3 text-md">
                   {proyecto.description}
                 </p>
 
@@ -65,17 +68,12 @@ export default function Portafolio() {
                   {proyecto.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-pink-100 text-[#281e76] text-xs px-2 py-1 rounded-full"
+                      className="bg-[#ffee98] text-[#281e76] text-xs px-2 py-1 rounded-full"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-
-                {/* Categoría */}
-                <span className="text-xs text-gray-500">
-                  Categoría: {proyecto.category}
-                </span>
               </div>
             </div>
           ))}
