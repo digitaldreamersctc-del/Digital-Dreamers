@@ -9,8 +9,6 @@ lerna-debug.log*
 
 # Dependencias, builds y configs locales
 node_modules/
-dist/
-docs/
 dist-ssr
 *.local
 
