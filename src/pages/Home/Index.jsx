@@ -5,7 +5,7 @@ import CardSec from '../../components/ui/SectionCard'
 
 export default function Inicio() {
   return (
-    <div className="flex flex-col bg-gray-50 m-0 p-0">
+    <div className="bg-[#DAD2FF] text-gray-800 rounded-3xl flex flex-col">
       {/* Bienvenida */}
       <section className="relative flex flex-col lg:flex-row items-center justify-between bg-linear-to-tr from-[#B2A5FF] to-gray-50 px-10 lg:px-20 py-24 overflow-hidden">
         {/* Fondo decorativo */}
@@ -50,7 +50,7 @@ export default function Inicio() {
           <CardSec
             title="Nuestra historia"
             description="Somos tres chicas apasionadas por la tecnología y la creatividad. Todo empezó cuando descubrimos que, uniendo nuestras habilidades en programación, desarrollo web, diseño gráfico y marketing digital, podíamos crear algo más grande que proyectos individuales. Así nació nuestro proyecto: un espacio donde transformamos ideas en soluciones digitales reales. ❤️👩‍💻"
-            className="col-span-1 p-4 border-3 border-[#B2A5FF] rounded-2xl hover:border-[#281e76] transition-transform"
+            className="col-span-1 p-4 border-3 border-[#cb60f1] rounded-2xl hover:border-[#281e76] transition-transform"
           />
           <CardSec
             className="col-span-1 rounded-2xl hover:border-[#281e76] transition-transform"
@@ -60,7 +60,7 @@ export default function Inicio() {
           <CardSec
             title="Programar con propósito"
             description="Es crear soluciones web innovadoras que mezclen estética 🎨, funcionalidad ⚙️ y organización 📋. Lo hacemos con un espíritu de colaboración donde nuestras ideas (¡y las tuyas!) cobran vida en forma de experiencias digitales que inspiran, comunican y dejan huella."
-            className="col-span-1 p-4 border-3 border-[#B2A5FF] rounded-2xl hover:border-[#281e76] transition-transform"
+            className="col-span-1 p-4 border-3 border-[#cb60f1] rounded-2xl hover:border-[#281e76] transition-transform"
           />
         </div>
       </div>

@@ -22,7 +22,7 @@ function App() {
   return (
     <BrowserRouter basename="/Digital-Dreamers/">
       <AuthProvider>
-        <div className="min-h-screen flex flex-col">
+        <div className="min-h-screen flex flex-col font-[Poppins]">
           <Navbar />
 
           <main className="grow p-6">

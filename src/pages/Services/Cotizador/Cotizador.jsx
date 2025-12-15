@@ -21,8 +21,8 @@ export default function Cotizador() {
   )
 
   return (
-    <div className="min-h-screen bg-[#281e76] p-6">
-      <h1 className="text-3xl font-bold text-white mb-6">Cotizador Digital</h1>
+    <div className="min-h-screen bg-gray-50 p-6">
+      <h1 className="text-3xl font-bold text-[#281e76] mb-6">Cotizador Digital</h1>
 
       <Filters
         type={type}
@@ -44,7 +44,7 @@ export default function Cotizador() {
         <div className="md:col-span-4 space-y-10">
           {(type === 'all' || type === 'services') && (
             <section>
-              <h2 className="text-xl font-bold text-white mb-4">Servicios</h2>
+              <h2 className="text-xl font-bold text-[#281e76] mb-4">Servicios</h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {services.map((s) => (
                   <ServiceCard key={s.id} service={s} onAdd={addItem} />
@@ -55,7 +55,7 @@ export default function Cotizador() {
 
           {(type === 'all' || type === 'packages') && (
             <section>
-              <h2 className="text-xl font-bold text-white mb-4">Paquetes</h2>
+              <h2 className="text-xl font-bold text-[#281e76] mb-4">Paquetes</h2>
               <div className="grid sm:grid-cols-2 gap-4">
                 {filteredPackages.map((p) => (
                   <PackageCard key={p.id} pack={p} onAdd={addItem} />

@@ -1,0 +1,78 @@
+{
+    "intro": {
+        "title": "Los valores que nos definen",
+        "subtitle": "Principios que guían cada proyecto y decisión del equipo."
+    },
+    "pilares": [
+        {
+            "id": "colaboracion",
+            "icon": "🤝",
+            "title": "Colaboración",
+            "summary": "Trabajamos como un solo equipo compartiendo ideas y apoyándonos.",
+            "detail": "Unimos talentos, pedimos ayuda cuando es necesario y celebramos los logros en conjunto.",
+            "quote": "Un buen equipo funciona como código limpio."
+        },
+        {
+            "id": "creatividad",
+            "icon": "🎨",
+            "title": "Creatividad",
+            "summary": "Convertimos ideas en soluciones funcionales y atractivas.",
+            "detail": "Mezclamos lógica y diseño para crear experiencias digitales memorables.",
+            "quote": "Programar también es crear."
+        },
+        {
+            "id": "perseverancia",
+            "icon": "💪",
+            "title": "Perseverancia",
+            "summary": "Aprendemos de los errores y seguimos avanzando.",
+            "detail": "Cada bug es una oportunidad para mejorar y crecer.",
+            "quote": "El error acerca a la solución."
+        },
+        {
+            "id": "responsabilidad",
+            "icon": "📅",
+            "title": "Responsabilidad",
+            "summary": "Cumplimos plazos y entregamos calidad.",
+            "detail": "Asumimos nuestro rol con compromiso y comunicación clara.",
+            "quote": "Cada entrega es una promesa cumplida."
+        },
+        {
+            "id": "curiosidad",
+            "icon": "🔍",
+            "title": "Curiosidad",
+            "summary": "Aprendemos y exploramos constantemente.",
+            "detail": "Buscamos nuevas herramientas y mejores soluciones.",
+            "quote": "Aprender nunca se detiene."
+        },
+        {
+            "id": "respeto",
+            "icon": "🤗",
+            "title": "Respeto",
+            "summary": "Valoramos cada opinión del equipo.",
+            "detail": "Escuchamos, debatimos y construimos con empatía.",
+            "quote": "Cada aporte cuenta."
+        }
+    ],
+    "contextos": [
+        {
+            "icon": "🏠",
+            "title": "Familia y equipo",
+            "text": "Colaboramos, respetamos y resolvemos retos juntas."
+        },
+        {
+            "icon": "📚",
+            "title": "Aprendizaje",
+            "text": "Compartimos conocimiento con curiosidad y constancia."
+        },
+        {
+            "icon": "🎯",
+            "title": "Proyectos",
+            "text": "Aplicamos valores para crear soluciones reales."
+        },
+        {
+            "icon": "🌱",
+            "title": "Comunidad",
+            "text": "Aportamos con responsabilidad y creatividad."
+        }
+    ]
+}

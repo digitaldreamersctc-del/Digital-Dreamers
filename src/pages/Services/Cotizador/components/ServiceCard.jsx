@@ -6,7 +6,7 @@ export function ServiceCard({ service, onAdd }) {
       <p className="mt-2 font-semibold">${service.price}</p>
       <button
         onClick={() => onAdd(service)}
-        className="mt-3 bg-[#B2A5FF] text-white px-4 py-2 rounded-xl"
+        className="mt-3 bg-[#cb60f1] text-white px-4 py-2 rounded-xl"
       >
         Agregar
       </button>

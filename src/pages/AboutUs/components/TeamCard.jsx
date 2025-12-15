@@ -5,7 +5,7 @@ function TeamCard({ member }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="bg-white rounded-2xl shadow-lg p-6 flex flex-col gap-4 hover:-translate-y-2 transition">
+    <div className="bg-white rounded-2xl shadow-lg text-lg p-6 flex flex-col gap-4 hover:-translate-y-2 transition">
       {/* Header */}
       <div className="text-center">
         <h3 className="text-3xl font-[Concert_One] text-[#493D9E]">
@@ -19,7 +19,7 @@ function TeamCard({ member }) {
         {member.skills.map((skill, i) => (
           <span
             key={i}
-            className="text-xs px-3 py-1 bg-[#EDE9FF] text-[#352C7A] rounded-full"
+            className=" px-3 py-1 bg-[#EDE9FF] text-[#352C7A] rounded-full"
           >
             {skill}
           </span>

@@ -1,4 +1,4 @@
-import CardT from '../../../components/ui/TeamCard'
+import CardT from '../../../components/ui/MiniTeamCard'
 
 export default function Equipo() {
   return (

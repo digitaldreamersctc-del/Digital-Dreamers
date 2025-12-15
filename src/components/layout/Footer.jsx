@@ -5,11 +5,12 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaPinterestP,
+  FaMapMarkerAlt, FaPhoneAlt, FaEnvelope,
 } from 'react-icons/fa'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#281e76] text-white py-16">
+    <footer className="bg-[#281e76] font-[Poppins] text-white py-16">
       {/* LOGO + FRASE */}
       <div className="max-w-6xl mx-auto px-6 mb-12 flex flex-col items-center md:items-start">
         <img
@@ -17,13 +18,13 @@ export default function Footer() {
           alt="Digital Dreamers Logo"
           className="w-32 mb-4"
         />
-        <p className="text-2xl opacity-90 text-center md:text-left">
+        <p className="text-xl opacity-90 text-center md:text-left font-[Merienda] font-semibold">
           Impulsamos sueños con código
         </p>
       </div>
 
       {/* GRID */}
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-2 text-center md:text-left">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         {/* Conócenos */}
         <div>
           <h3 className="font-[Concert_One]  text-2xl mb-2">Conócenos</h3>
@@ -70,11 +71,20 @@ export default function Footer() {
 
         {/* Contacto */}
         <div>
-          <h3 className="font-[Concert_One]  text-2xl mb-2">Contáctanos</h3>
-          <ul className="space-y-2 text-sm">
-            <li>Carabayllo - Lima, Perú</li>
-            <li>968 325 993</li>
-            <li>digitaldreamersctc@gmail.com</li>
+          <h3 className="font-[Concert_One] text-2xl mb-2">Contáctanos</h3>
+          <ul className="space-y-3 text-sm">
+            <li className="flex items-center gap-3">
+              <FaMapMarkerAlt className="text-white" />
+              <span>Carabayllo - Lima, Perú</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaPhoneAlt className="text-white" />
+              <span>968 325 993</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <FaEnvelope className="text-white" />
+              <span>digitaldreamersctc@gmail.com</span>
+            </li>
           </ul>
         </div>
       </div>
