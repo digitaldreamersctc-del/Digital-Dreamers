@@ -20,7 +20,7 @@ import Dashboard from './pages/Login/Dashboard/Dashboard.jsx'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter  basename="/Digital-Dreamers/" >
       <AuthProvider>
         <div className="min-h-screen flex flex-col">
           <Navbar />
