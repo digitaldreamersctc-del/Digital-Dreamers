@@ -21,48 +21,62 @@ export default function Cotizador() {
   )
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <h1 className="text-3xl font-bold text-[#281e76] mb-6">Cotizador Digital</h1>
+    <div className="min-h-screen bg-[#DAD2FF]">
 
-      <Filters
-        type={type}
-        setType={setType}
-        category={category}
-        setCategory={setCategory}
-      />
+      <section className="text-center py-20 bg-white shadow-md mt-10 mb-20 px-6">
+        <h1 className="text-6xl font-bold text-[#281e76] mb-6 font-[Merienda]">
+          Cotizador de Servicios
+        </h1>
+        <p className="max-w-3xl mx-auto text-xl font-medium text-[#493D9E]">
+          Selecciona los servicios y paquetes que deseas para obtener una cotización personalizada.
+        </p>
+      </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-6 mt-6">
-        <Cart
-          cart={cart}
-          removeItem={removeItem}
-          total={total}
-          checkout={checkout}
-          user={user}
-          login={login}
+      <div className='p-10 m-10'> {/* Contenido principal */}
+        <Filters
+          type={type}
+          setType={setType}
+          category={category}
+          setCategory={setCategory}
         />
 
-        <div className="md:col-span-4 space-y-10">
-          {(type === 'all' || type === 'services') && (
-            <section>
-              <h2 className="text-xl font-bold text-[#281e76] mb-4">Servicios</h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {services.map((s) => (
-                  <ServiceCard key={s.id} service={s} onAdd={addItem} />
-                ))}
-              </div>
-            </section>
-          )}
+        <div className="grid grid-cols-1 md:grid-cols-6 gap-6 mt-6">
+          <Cart
+            cart={cart}
+            removeItem={removeItem}
+            total={total}
+            checkout={checkout}
+            user={user}
+            login={login}
+          />
 
-          {(type === 'all' || type === 'packages') && (
-            <section>
-              <h2 className="text-xl font-bold text-[#281e76] mb-4">Paquetes</h2>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {filteredPackages.map((p) => (
-                  <PackageCard key={p.id} pack={p} onAdd={addItem} />
-                ))}
-              </div>
-            </section>
-          )}
+          <div className="md:col-span-4 space-y-10">
+            {(type === 'all' || type === 'services') && (
+              <section>
+                <h2 className="text-3xl text-[#281e76] mb-4 font-[Concert_One]">
+                  Servicios
+                </h2>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {services.map((s) => (
+                    <ServiceCard key={s.id} service={s} onAdd={addItem} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {(type === 'all' || type === 'packages') && (
+              <section>
+                <h2 className="text-3xl text-[#281e76] mb-4 font-[Concert_One]">
+                  Paquetes
+                  </h2>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  {filteredPackages.map((p) => (
+                    <PackageCard key={p.id} pack={p} onAdd={addItem} />
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
         </div>
       </div>
     </div>

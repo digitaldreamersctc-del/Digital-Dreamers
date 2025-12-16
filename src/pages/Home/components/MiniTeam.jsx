@@ -15,19 +15,19 @@ export default function Equipo() {
         <CardT
           name="Marcell 🌸"
           description="Especialista en diseño UI/UX, amante del detalle y la belleza en cada proyecto."
-          image={`${import.meta.env.BASE_URL}images/img2.png`}
+          image={`${import.meta.env.BASE_URL}images/imgT1.png`}
           title="Foto de Marcell"
         />
         <CardT
           name="Yamileth 💻"
           description="Front-end developer apasionada por un código limpio, funcional y elegante."
-          image={`${import.meta.env.BASE_URL}images/img2.png`}
+          image={`${import.meta.env.BASE_URL}images/imgT2.png`}
           title="Foto de Yamileth"
         />
         <CardT
           name="Sandra 🚀"
           description="Creativa en maquetación web, transforma ideas en interfaces que conectan."
-          image={`${import.meta.env.BASE_URL}images/img2.png`}
+          image={`${import.meta.env.BASE_URL}images/imgT3.png`}
           title="Foto de Sandra"
         />
       </div>

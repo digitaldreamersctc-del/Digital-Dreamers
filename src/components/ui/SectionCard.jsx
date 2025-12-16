@@ -1,28 +1,47 @@
-export default function CardSec({ title, description, image, className = '' }) {
+export default function CardT({
+  title,
+  description,
+  image,
+  name,
+  className = '',
+}) {
   return (
     <div
       className={`
-        justify-center items-center gap-5
-        w-full rounded-2xl
         ${className}
+        grid grid-cols-1 bg-white
+        w-full
+        sm:w-[250px] md:w-[300px] lg:w-[350px]
+        sm:h-[250px] md:h-[300px] lg:h-[350px]
+        text-center text-md 
+        rounded-2xl overflow-hidden
+        shadow-md hover:shadow-lg
+        border-2 border-[#281e76] hover:border-[#cb60f1]
+        transition-all duration-300
+        hover:-translate-y-2
       `}
     >
-      <div className=" text-center  leading-relaxed">
-        <h2 className="text-[#493D9E] text-3xl font-[Concert_One] my-6">
-          {title}
-        </h2>
-        <p className="my-2 text-medium text-gray-800">{description}</p>
+      {image && (
+        <img
+          src={image}
+          alt={name}
+          className="
+            w-full
+            h-full
+            object-cover
+            lg:col-span-1
+          "
+        />
+      )}
 
-        {image && (
-          <div className="flex justify-center items-center w-full my-4">
-            <img
-              src={image}
-              alt={title}
-              className="w-full max-w-[500px] rounded-2xl object-cover
-              transition-transform duration-300 hover:-translate-y-2"
-            />
-          </div>
-        )}
+      <div className="p-5 flex flex-col justify-center items-center">
+        <h3 className="text-[#493D9E] font-[Concert_One] text-2xl py-4">
+          {title}
+        </h3>
+
+        <p className="text-gray-800 font-medium">
+          {description}
+        </p>
       </div>
     </div>
   )

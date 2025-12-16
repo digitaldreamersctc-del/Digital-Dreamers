@@ -116,7 +116,7 @@ export default function Portfolio() {
                   {openProject.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-[#e5afec] text-[#281e76] text-xs px-3 py-1 rounded-full"
+                      className="bg-[#DAD2FF] text-[#281e76] text-xs px-3 py-1 rounded-full"
                     >
                       {tech}
                     </span>

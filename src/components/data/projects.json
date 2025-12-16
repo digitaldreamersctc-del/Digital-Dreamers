@@ -5,7 +5,7 @@
     "category": "Diseño Web",
     "description": "Landing responsive que presenta nuestra marca, el equipo y nuestros valores.",
     "details": "Creada con React, Tailwind CSS y Javascript, incluye secciones como Inicio, Sobre Nosotras, Valores y Contacto, reflejando la esencia del equipo.",
-    "image": "https://i.ibb.co/FbJZhKJ/inspiracion.jpg",
+    "image": "public/images/imgLPage.png",
     "technologies": [
       "React",
       "Tailwind",
@@ -19,7 +19,7 @@
     "category": "App",
     "description": "Aplicación funcional que realiza operaciones básicas y avanzadas con una interfaz moderna.",
     "details": "Desarrollada en React con diseño responsive y cálculos en tiempo real. Ideal para mostrar lógica y manejo de estados en React.",
-    "image": "https://i.ibb.co/fY0HQt4/calculadora.jpg",
+    "image": "public/images/imgCalculator.png",
     "technologies": [
       "React",
       "CSS",
@@ -33,7 +33,7 @@
     "category": "Web",
     "description": "Proyecto de referencia que nos inspira por su estructura limpia y moderna.",
     "details": "Sitio web con animaciones sutiles, excelente uso del color y diseño minimalista, que sirve como guía para futuros proyectos del equipo.",
-    "image": "https://i.ibb.co/fY0HQt4/calculadora.jpg",
+    "image": "public/images/imgWeb.png",
     "technologies": [
       "HTML",
       "CSS",

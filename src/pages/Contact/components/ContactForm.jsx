@@ -123,11 +123,6 @@ export default function FormularioContacto() {
       id="contacto"
       className="bg-violet-300 text-white py-16 px-6 flex flex-col items-center"
     >
-      <h2 className="text-3xl font-bold mb-2">¡Conectemos!</h2>
-      <p className="mb-8 text-center max-w-lg">
-        Completa el formulario para que podamos conocerte mejor y responderte lo
-        antes posible.
-      </p>
 
       <form
         onSubmit={handleSubmit}

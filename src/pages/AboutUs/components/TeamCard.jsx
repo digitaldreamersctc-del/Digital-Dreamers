@@ -11,7 +11,7 @@ function TeamCard({ member }) {
         <h3 className="text-3xl font-[Concert_One] text-[#493D9E]">
           {member.name}
         </h3>
-        <p className="text-lg  text-[#cb60f1] font-semibold">{member.role}</p>
+        <p className=" text-[#cb60f1] font-semibold">{member.role}</p>
       </div>
 
       {/* Skills */}
@@ -19,7 +19,7 @@ function TeamCard({ member }) {
         {member.skills.map((skill, i) => (
           <span
             key={i}
-            className=" px-3 py-1 bg-[#EDE9FF] text-[#352C7A] rounded-full"
+            className=" px-3 py-1 text-sm bg-[#EDE9FF] text-[#352C7A] rounded-full"
           >
             {skill}
           </span>
@@ -41,7 +41,7 @@ function TeamCard({ member }) {
 
         {member.tools.map((tool, i) => (
           <div key={i}>
-            <div className="flex justify-between text-xs font-medium">
+            <div className="flex justify-between text-sm font-medium">
               <span>{tool.name}</span>
               <span>{tool.level}%</span>
             </div>
