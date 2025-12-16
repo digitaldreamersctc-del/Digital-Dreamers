@@ -18,7 +18,7 @@ export default function UserProfile() {
 
         <div>
           <p className="font-medium">{user?.displayName}</p>
-          <p className="text-gray-600 text-sm">{user?.email}</p>
+          <p className="text-[#281e76] text-sm">{user?.email}</p>
         </div>
       </div>
     </div>

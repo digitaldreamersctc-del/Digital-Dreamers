@@ -42,7 +42,7 @@ export default function Portfolio() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-3">
           {proyectosFiltrados.map((proyecto) => (
             <div
               key={proyecto.id}

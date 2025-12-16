@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import services from '../../../components/data/services.json'
-import packages from '../../../components/data/packages.json'
+import services from '../../../components/data/servicesCartData.json'
+import packages from '../../../components/data/packagesCartData.json'
 import { ServiceCard } from './components/ServiceCard'
 import { PackageCard } from './components/PackageCard'
 import { Cart } from './components/Cart'

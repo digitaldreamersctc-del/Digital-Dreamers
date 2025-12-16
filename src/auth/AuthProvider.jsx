@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { auth } from '../firebase'
+import { createContext, useContext, useEffect, useState } from "react";
+import { auth } from "../firebase";
 import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -10,131 +10,153 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   onIdTokenChanged,
-} from 'firebase/auth'
-import { doc, setDoc, getDoc } from 'firebase/firestore'
-import { db } from '../firebase'
-import { AuthContext } from '../context/AuthContext'
+} from "firebase/auth";
+
+import {
+  doc,
+  setDoc,
+  getDoc,
+} from "firebase/firestore";
+import { db } from "../firebase";
+
+const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [actionLoading, setActionLoading] = useState(false)
-  const [error, setError] = useState('')
+  const [user, setUser] = useState(null);            // incluye datos extra
+  const [loading, setLoading] = useState(true);       // loading inicial
+  const [actionLoading, setActionLoading] = useState(false); // loading de acciones
+  const [error, setError] = useState("");
 
-  const googleProvider = new GoogleAuthProvider()
+  const googleProvider = new GoogleAuthProvider();
 
+
+  // 📌 Cargar datos extra del usuario desde Firestore
   const getUserData = async (uid) => {
-    const snap = await getDoc(doc(db, 'users', uid))
-    return snap.exists() ? snap.data() : {}
-  }
+    const snap = await getDoc(doc(db, "users", uid));
+    return snap.exists() ? snap.data() : {};
+  };
 
+
+  // 📌 Registrar nuevo usuario + perfil extra en Firestore
   const register = async ({ email, password, displayName }) => {
-    setError('')
-    setActionLoading(true)
+    setError("");
+    setActionLoading(true);
 
     try {
-      const cred = await createUserWithEmailAndPassword(auth, email, password)
+      const cred = await createUserWithEmailAndPassword(auth, email, password);
 
+      // guardar nombre en Firebase Auth
       if (displayName) {
-        await updateProfile(cred.user, { displayName })
+        await updateProfile(cred.user, { displayName });
       }
 
-      await setDoc(doc(db, 'users', cred.user.uid), {
-        displayName: displayName || '',
-        role: 'user',
+      // crear documento en Firestore
+      await setDoc(doc(db, "users", cred.user.uid), {
+        displayName: displayName || "",
+        role: "user",                // 👈 rol por defecto
         createdAt: new Date(),
-      })
+      });
 
-      return cred.user
+      return cred.user;
     } catch (err) {
-      setError(err.message)
-      throw err
+      setError(err.message);
+      throw err;
     } finally {
-      setActionLoading(false)
+      setActionLoading(false);
     }
-  }
+  };
 
+
+  // 📌 Inicio de sesión con email/pass
   const login = async ({ email, password }) => {
-    setError('')
-    setActionLoading(true)
+    setError("");
+    setActionLoading(true);
 
     try {
-      const cred = await signInWithEmailAndPassword(auth, email, password)
-      return cred.user
+      const cred = await signInWithEmailAndPassword(auth, email, password);
+      return cred.user;
     } catch (err) {
-      setError(err.message)
-      throw err
+      setError(err.message);
+      throw err;
     } finally {
-      setActionLoading(false)
+      setActionLoading(false);
     }
-  }
+  };
 
+
+  
+  // 📌 Login con Google OAuth
   const loginWithGoogle = async () => {
-    setError('')
-    setActionLoading(true)
+    setError("");
+    setActionLoading(true);
 
     try {
-      const result = await signInWithPopup(auth, googleProvider)
-      const ref = doc(db, 'users', result.user.uid)
-      const snap = await getDoc(ref)
+      const result = await signInWithPopup(auth, googleProvider);
+
+      // si es primera vez, guardamos un perfil
+      const snap = await getDoc(doc(db, "users", result.user.uid));
 
       if (!snap.exists()) {
-        await setDoc(ref, {
+        await setDoc(doc(db, "users", result.user.uid), {
           displayName: result.user.displayName,
-          role: 'user',
+          role: "user",
           createdAt: new Date(),
-        })
+        });
       }
 
-      return result.user
+      return result.user;
     } catch (err) {
-      setError(err.message)
-      throw err
+      setError(err.message);
+      throw err;
     } finally {
-      setActionLoading(false)
+      setActionLoading(false);
     }
-  }
+  };
 
+  // 📌 Logout
   const logout = async () => {
-    await signOut(auth)
-    setUser(null)
-    localStorage.removeItem('user')
-  }
+    await signOut(auth);
+    setUser(null);
+  };
 
-  const resetPassword = (email) => sendPasswordResetEmail(auth, email)
 
+  // 📌 Reset password
+  const resetPassword = (email) =>
+    sendPasswordResetEmail(auth, email);
+
+
+  // 📌 Refresh automático del token
   useEffect(() => {
-    const unsub = onIdTokenChanged(auth, () => {})
-    return unsub
-  }, [])
+    const unsub = onIdTokenChanged(auth, () => { });
+    return () => unsub();
+  }, []);
 
+
+  // 📌 Listener de sesión + datos extra + persistencia
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, async (u) => {
       if (u) {
-        const extra = await getUserData(u.uid)
+        const extra = await getUserData(u.uid);
+        const mergedUser = { ...u, ...extra };
 
-        const mergedUser = {
-          uid: u.uid,
-          email: u.email,
-          displayName: u.displayName,
-          photoURL: u.photoURL,
-          ...extra,
-        }
+        // guardar en localStorage
+        localStorage.setItem("user", JSON.stringify(mergedUser));
 
-        setUser(mergedUser)
-        localStorage.setItem('user', JSON.stringify(mergedUser))
+        setUser(mergedUser);
       } else {
-        setUser(null)
-        localStorage.removeItem('user')
+        setUser(null);
+        localStorage.removeItem("user");
       }
-      setLoading(false)
-    })
+      setLoading(false);
+    });
 
-    return unsub
-  }, [])
+    return () => unsub();
+  }, []);
 
-  const hasRole = (role) => user?.role === role
-  const isAdmin = () => user?.role === 'admin'
+
+  // 📌 Permisos basados en roles (muy útil)
+  const hasRole = (role) => user?.role === role;
+  const isAdmin = () => user?.role === "admin";
 
   return (
     <AuthContext.Provider
@@ -155,5 +177,8 @@ export function AuthProvider({ children }) {
     >
       {children}
     </AuthContext.Provider>
-  )
+  );
 }
+
+// eslint-disable-next-line react-refresh/only-export-components
+export const useAuth = () => useContext(AuthContext);

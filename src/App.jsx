@@ -6,6 +6,7 @@ import Footer from './components/layout/Footer.jsx'
 //import UserProfile from "./components/UserProfile.jsx";
 
 // Páginas
+import Lanzamiento from './pages/Home/Lanzamiento/WebsiteLaunch.jsx'
 import Inicio from './pages/Home/Index.jsx'
 import Nosotras from './pages/AboutUs/Nosotras.jsx'
 import Contacto from './pages/Contact/Contacto.jsx'
@@ -17,18 +18,23 @@ import { AuthProvider } from './auth/AuthProvider.jsx'
 import ProtectedRoute from './auth/ProtectedRoute.jsx'
 import Login from './pages/Login/Login.jsx'
 import Dashboard from './pages/Login/Dashboard/Dashboard.jsx'
+import CustomCursor from './components/ui/CustomCursor.jsx'
 
 function App() {
   return (
-    <BrowserRouter basename="/Digital-Dreamers/">
       <AuthProvider>
+        
+        {/* Cursor global */}
+        <CustomCursor />
+
         <div className="min-h-screen flex flex-col font-[Poppins]">
           <Navbar />
 
           <main className="grow p-6">
             <Routes>
               {/* Rutas existentes */}
-              <Route path="/" element={<Inicio />} />
+              <Route path="/" element={<Lanzamiento />} />
+              <Route path="/home" element={<Inicio />} />
               <Route path="/servicios" element={<Servicios />} />
               <Route path="/proyectos" element={<Proyectos />} />
               <Route path="/nosotras" element={<Nosotras />} />
@@ -58,7 +64,7 @@ function App() {
 
         <Footer />
       </AuthProvider>
-    </BrowserRouter>
+
   )
 }
 export default App

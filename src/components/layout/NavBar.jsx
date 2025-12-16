@@ -10,31 +10,31 @@ export default function NavBar() {
   const { user, logout } = auth
 
   const links = [
-    { label: 'Inicio', to: '/' },
+    { label: 'Bienvenida', to: '/' },
+    { label: 'Inicio', to: '/home' },
     { label: 'Nosotras', to: '/nosotras' },
     { label: 'Servicios', to: '/servicios' },
     { label: 'Contacto', to: '/contacto' },
-    { label: 'Proyectos', to: '/proyectos' },
   ]
 
   return (
     <header
       className="
       bg-[#281e76] sticky top-0 z-20 shadow-md
-      grid grid-cols-1 md:grid-cols-4
+
     "
     >
       {/* CONTENEDOR GENERAL */}
       <div
         className="
         col-span-full
-        grid grid-cols-1 md:grid-cols-4
+        grid grid-cols-1 lg:grid-cols-6
         items-center
         px-6 py-4
       "
       >
         {/* 1 LOGO (1 columna) */}
-        <div className="flex justify-between items-center md:col-span-1">
+        <div className="flex justify-between items-center lg:col-span-1">
           <div className="text-white text-2xl font-bold">Digital Dreamers</div>
 
           {/* HAMBURGUESA */}
@@ -51,9 +51,9 @@ export default function NavBar() {
         {/* 2 MENÚ (2 columnas desktop) */}
         <nav
           className={`
-            md:col-span-2
+            md:col-span-3
             ${menuOpen ? 'block' : 'hidden'} lg:block
-            md:flex
+            flex
             flex-col md:flex-row
             justify-center
             mt-4 md:mt-0
@@ -96,7 +96,7 @@ export default function NavBar() {
         {/* 3 AUTH (1 columna) */}
         <div
           className="
-          md:col-span-1
+          md:col-span-1.5
           flex flex-col md:flex-row
           items-start md:items-center
           gap-2

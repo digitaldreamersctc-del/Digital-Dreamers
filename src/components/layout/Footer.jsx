@@ -15,14 +15,17 @@ export default function Footer() {
       {/* GRID */}
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
         {/* Logo */}
-        <div>
-          <h3 className="font-[Concert_One] text-2xl mb-2">Digital Dreamers</h3>
+        <div className="flex flex-col items-center md:items-start">
+          <h3 className="font-[Concert_One] text-2xl mb-2 text-center md:text-left">
+            Digital Dreamers
+          </h3>
           <img
             src={`${import.meta.env.BASE_URL}images/logo.png`}
             alt="Digital Dreamers Logo"
-            className="w-40 mb-4"
+            className="w-40 mb-4 mx-auto md:mx-0"
           />
         </div>
+
         {/* Conócenos */}
         <div>
           <h3 className="font-[Concert_One]  text-2xl mb-2">Conócenos</h3>
@@ -71,7 +74,7 @@ export default function Footer() {
         <div>
           <h3 className="font-[Concert_One] text-2xl mb-2">Contáctanos</h3>
           <div className="flex justify-center md:justify-start opacity-90 space-x-4 text-xl mb-6">
-            <ul className="space-y-2 text-sm">
+            <ul     className="flex flex-col items-center md:items-start space-y-2 text-sm">
               <li className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-white" />
                 <span>Carabayllo - Lima, Perú</span>

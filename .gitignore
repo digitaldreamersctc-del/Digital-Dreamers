@@ -1,3 +1,10 @@
+# Configuración de entorno para variables sensibles
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
 # Logs: se evita subir archivos log que solo ocupan espacio
 logs
 *.log

@@ -7,13 +7,13 @@ import { getAuth } from 'firebase/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyB-jQaL1pwaaJDvk-tPdqF9HOmxWBRX4Zs',
-  authDomain: 'digital-dreamers-ctc.firebaseapp.com',
-  projectId: 'digital-dreamers-ctc',
-  storageBucket: 'digital-dreamers-ctc.firebasestorage.app',
-  messagingSenderId: '920156689286',
-  appId: '1:920156689286:web:a70f094e4b731415d21207',
-}
+  apiKey: "AIzaSyALdQCEZY57rWwbdtPQj39NsTk2PrPbLIc",
+  authDomain: "digital-dreamers-ct.firebaseapp.com",
+  projectId: "digital-dreamers-ct",
+  storageBucket: "digital-dreamers-ct.firebasestorage.app",
+  messagingSenderId: "245905003710",
+  appId: "1:245905003710:web:768769a8b41ef0cd1efaef"
+};
 
 // Inicializa Firebase
 const app = initializeApp(firebaseConfig)
@@ -22,4 +22,3 @@ const app = initializeApp(firebaseConfig)
 // Exporta db en formato v9 (lo que espera taskService.js)
 export const db = getFirestore(app)
 export const auth = getAuth(app)
-export default app
