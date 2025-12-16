@@ -3,14 +3,96 @@
     "id": "edu-ux",
     "category": "educativo",
     "title": "Pack UX Educativo",
-    "details": "Curso UX + mentoría personalizada.",
+    "details": [
+      "Curso práctico de UX desde cero",
+      "Metodologías centradas en el usuario",
+      "Mentoría personalizada 1 a 1",
+      "Ejercicios aplicados a proyectos reales"
+    ],
     "price": 50
   },
   {
     "id": "brand-full",
     "category": "marca",
     "title": "Marca Colectiva Full",
-    "details": "Branding, web completa y marketing.",
+    "details": [
+      "Identidad visual completa",
+      "Diseño y desarrollo de sitio web",
+      "Estrategia básica de marketing digital",
+      "Acompañamiento creativo"
+    ],
     "price": 150
+  },
+  {
+    "id": "ecom-basic",
+    "category": "ecommerce",
+    "title": "E-commerce Básico",
+    "details": [
+      "Tienda online funcional",
+      "Catálogo de productos",
+      "Carrito de compras",
+      "Integración de pasarela de pago"
+    ],
+    "price": 120
+  },
+  {
+    "id": "ecom-pro",
+    "category": "ecommerce",
+    "title": "E-commerce Profesional",
+    "details": [
+      "Productos ilimitados",
+      "Pagos online y gestión de pedidos",
+      "Optimización SEO básica",
+      "Diseño responsive"
+    ],
+    "price": 220
+  },
+  {
+    "id": "blog-personal",
+    "category": "blog",
+    "title": "Blog Personal Creativo",
+    "details": [
+      "Diseño visual personalizado",
+      "Secciones y categorías",
+      "Panel de publicación de contenidos",
+      "Optimización para lectura"
+    ],
+    "price": 80
+  },
+  {
+    "id": "blog-pro",
+    "category": "blog",
+    "title": "Blog Profesional",
+    "details": [
+      "Optimización SEO",
+      "Branding personal",
+      "Integración de newsletter",
+      "Diseño adaptable a dispositivos"
+    ],
+    "price": 130
+  },
+  {
+    "id": "portfolio-basic",
+    "category": "portfolio",
+    "title": "Portafolio Profesional",
+    "details": [
+      "Presentación de proyectos",
+      "Sección de habilidades",
+      "Formulario de contacto",
+      "Diseño limpio y moderno"
+    ],
+    "price": 90
+  },
+  {
+    "id": "portfolio-premium",
+    "category": "portfolio",
+    "title": "Portafolio Premium",
+    "details": [
+      "Animaciones e interacciones",
+      "Optimización SEO",
+      "Branding personal avanzado",
+      "Diseño visual impactante"
+    ],
+    "price": 160
   }
 ]

@@ -1,4 +1,4 @@
-import CardT from '../../../components/ui/MiniTeamCard'
+import CardT from './MiniTeamCard'
 
 export default function Equipo() {
   return (
@@ -13,10 +13,10 @@ export default function Equipo() {
       </div>
       <div className="flex flex-wrap  justify-center gap-6 md:gap-8 px-4 md:px-24 my-12">
         <CardT
-          name="Marcell 🌸"
-          description="Especialista en diseño UI/UX, amante del detalle y la belleza en cada proyecto."
-          image={`${import.meta.env.BASE_URL}images/imgT1.png`}
-          title="Foto de Marcell"
+          name="Sandra 🚀"
+          description="Creativa en maquetación web, transforma ideas en interfaces que conectan."
+          image={`${import.meta.env.BASE_URL}images/imgT3.png`}
+          title="Foto de Sandra"
         />
         <CardT
           name="Yamileth 💻"
@@ -25,11 +25,13 @@ export default function Equipo() {
           title="Foto de Yamileth"
         />
         <CardT
-          name="Sandra 🚀"
-          description="Creativa en maquetación web, transforma ideas en interfaces que conectan."
-          image={`${import.meta.env.BASE_URL}images/imgT3.png`}
-          title="Foto de Sandra"
+          name="Marcell 🌸"
+          description="Especialista en diseño UI/UX, amante del detalle y la belleza en cada proyecto."
+          image={`${import.meta.env.BASE_URL}images/imgT1.png`}
+          title="Foto de Marcell"
         />
+        
+        
       </div>
     </div>
   )

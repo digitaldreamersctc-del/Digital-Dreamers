@@ -1,6 +1,6 @@
 export function Filters({ type, setType, category, setCategory }) {
   return (
-    <div className="bg-white rounded-2xl p-4 shadow flex flex-col md:flex-row gap-4 text-gray-800">
+    <div className="bg-white rounded-2xl p-4 font-medium shadow flex flex-col md:flex-row gap-4 text-gray-800">
       <select
         value={type}
         onChange={(e) => setType(e.target.value)}

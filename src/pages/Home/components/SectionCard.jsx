@@ -1,4 +1,4 @@
-export default function CardT({
+export default function CardSec({
   title,
   description,
   image,

@@ -121,12 +121,12 @@ export default function FormularioContacto() {
   return (
     <section
       id="contacto"
-      className="bg-violet-300 text-white py-16 px-6 flex flex-col items-center"
+      className=" flex flex-col items-center"
     >
 
       <form
         onSubmit={handleSubmit}
-        className="bg-[#FFF2AF] text-[#2E1E5B] rounded-2xl p-8 w-full max-w-lg shadow-lg space-y-5"
+        className="text-[#2E1E5B] rounded-2xl p-8 w-full  space-y-5"
       >
         {/* Nombres */}
         <div>
@@ -136,9 +136,9 @@ export default function FormularioContacto() {
             name="nombres"
             value={formData.nombres}
             onChange={handleChange}
-            placeholder="Ejemplo: Anelí Rosa"
+            placeholder="Ejemplo: Sandra"
             required
-            className="w-full mt-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4E2BBF]"
+            className="w-full mt-1 p-2 rounded-lg border border-gray-300 hover:border-[#cb60f1] shadow-sm hover:shadow-[#cb60f1] focus:outline-none focus:ring-2 focus:ring-[#493D9E]"
           />
         </div>
 
@@ -150,9 +150,9 @@ export default function FormularioContacto() {
             name="apellidos"
             value={formData.apellidos}
             onChange={handleChange}
-            placeholder="Ejemplo: Mejía Chirhuana"
+            placeholder="Ejemplo: Charri Macassi"
             required
-            className="w-full mt-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4E2BBF]"
+            className="w-full mt-1 p-2 rounded-lg border border-gray-300 hover:border-[#cb60f1] shadow-sm hover:shadow-[#cb60f1] focus:outline-none focus:ring-2 focus:ring-[#493D9E]"
           />
         </div>
 
@@ -168,7 +168,7 @@ export default function FormularioContacto() {
             max="45"
             placeholder="Entre 15 y 45 años. Ej: 18 años"
             required
-            className="w-full mt-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4E2BBF]"
+            className="w-full mt-1 p-2 rounded-lg border border-gray-300 hover:border-[#cb60f1] shadow-sm hover:shadow-[#cb60f1] focus:outline-none focus:ring-2 focus:ring-[#493D9E]"
           />
         </div>
 
@@ -180,9 +180,9 @@ export default function FormularioContacto() {
             value={formData.grado}
             onChange={handleChange}
             required
-            className="w-full mt-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4E2BBF]"
+            className="w-full mt-1 p-2 rounded-lg border border-gray-300 hover:border-[#cb60f1] shadow-sm hover:shadow-[#cb60f1] focus:outline-none focus:ring-2 focus:ring-[#493D9E]"
           >
-            <option value="">-- Selecciona una opción --</option>
+            <option value="">Selecciona una opción</option>
             <option value="secundaria">Secundaria en curso / completa</option>
             <option value="tecnico">Técnico / Instituto</option>
             <option value="universitario">Universitario en curso</option>
@@ -201,7 +201,7 @@ export default function FormularioContacto() {
             onChange={handleChange}
             placeholder="Ejemplo: Lima, Perú"
             required
-            className="w-full mt-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4E2BBF]"
+            className="w-full mt-1 p-2 rounded-lg border border-gray-300 hover:border-[#cb60f1] shadow-sm hover:shadow-[#cb60f1] focus:outline-none focus:ring-2 focus:ring-[#493D9E]"
           />
         </div>
 
@@ -215,7 +215,7 @@ export default function FormularioContacto() {
             onChange={handleChange}
             placeholder="+51 999 999 999"
             required
-            className="w-full mt-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4E2BBF]"
+            className="w-full mt-1 p-2 rounded-lg border border-gray-300 hover:border-[#cb60f1] shadow-sm hover:shadow-[#cb60f1] focus:outline-none focus:ring-2 focus:ring-[#493D9E]"
           />
         </div>
 
@@ -229,8 +229,37 @@ export default function FormularioContacto() {
             onChange={handleChange}
             placeholder="nombre@gmail.com"
             required
-            className="w-full mt-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4E2BBF]"
+            className="w-full mt-1 p-2 rounded-lg border border-gray-300 hover:border-[#cb60f1] shadow-sm hover:shadow-[#cb60f1] focus:outline-none focus:ring-2 focus:ring-[#493D9E]"
           />
+        </div>
+
+        {/* Interés */}
+        <div>
+          <label className="font-semibold">Servicio de interés:</label>
+          <select
+            name="grado"
+            value={formData.grado}
+            onChange={handleChange}
+            required
+            className="w-full mt-1 p-2 rounded-lg border border-gray-300 hover:border-[#cb60f1] shadow-sm hover:shadow-[#cb60f1] focus:outline-none focus:ring-2 focus:ring-[#493D9E]"
+          >
+            <option value="">Selecciona una opción</option>
+            {/* Educación */}
+            <option value="ux-educativo">Pack UX Educativo</option>
+            <option value="mentoria">Mentoría Creativa / Digital</option>
+            {/* Marca */}
+            <option value="branding">Branding e Identidad Visual</option>
+            <option value="marca-full">Marca Colectiva Full</option>
+            {/* Web */}
+            <option value="ecommerce-basico">E-commerce Básico</option>
+            <option value="ecommerce-pro">E-commerce Profesional</option>
+            <option value="blog-personal">Blog Personal</option>
+            <option value="blog-pro">Blog Profesional</option>
+            <option value="portfolio">Portafolio Profesional</option>
+            <option value="portfolio-premium">Portafolio Premium</option>
+            {/* Otros */}
+            <option value="otro">Otro / Aún no estoy segura(o)</option>
+          </select>
         </div>
 
         {/* Mensaje */}
@@ -243,7 +272,7 @@ export default function FormularioContacto() {
             placeholder="Cuéntanos, ¿en qué podemos ayudarte?..."
             rows="5"
             required
-            className="w-full mt-1 p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#4E2BBF]"
+            className="w-full mt-1 p-2 rounded-lg border border-gray-300 hover:border-[#cb60f1] shadow-sm hover:shadow-[#cb60f1] focus:outline-none focus:ring-2 focus:ring-[#493D9E]"
           ></textarea>
         </div>
 
@@ -258,7 +287,11 @@ export default function FormularioContacto() {
         {/* Botón */}
         <button
           type="submit"
-          className="w-full bg-purple-300 py-3 rounded-lg font-bold hover:bg-purple-400 transition-all"
+          className="mt-10 
+            px-6 py-3 rounded-xl font-semibold
+           hover:shadow-lg
+            inline-block bg-[#281e76] text-white text-lg
+            shadow-md hover:bg-[#cb60f1]"
         >
           Enviar Mensaje
         </button>

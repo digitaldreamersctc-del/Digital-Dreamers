@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Portfolio from './components/Portfolio'
-import Equipo from './components/MiniTeam'
-import CardSec from '../../components/ui/SectionCard'
+import Equipo from './components/MiniTeam/MiniTeam'
+import CardSec from './components/SectionCard'
 
 export default function Inicio() {
   return (
@@ -35,11 +35,12 @@ export default function Inicio() {
 
             <Link
               to="/contacto"
-              className="
-                inline-block bg-[#281e76] text-white text-lg
-                font-semibold px-6 py-3 rounded-2xl
-                shadow-md transition-all hover:bg-[#ffee98] hover:text-[#281e76]
-             "
+              className="mt-10 
+              px-6 py-3 rounded-xl font-semibold
+              hover:scale-105 hover:shadow-lg
+              inline-block bg-[#281e76] text-white text-lg
+              shadow-md transition-all duration-300 
+              hover:bg-[#cb60f1]"
             >
               Contáctanos
             </Link>
@@ -69,14 +70,14 @@ export default function Inicio() {
         px-6 sm:px-10 lg:px-24
         py-16 sm:py-20 lg:py-24
         bg-linear-to-b from-[#ffee98] to-gray-50"
-        >
+      >
         <div
           className="
           grid grid-cols-1
           md:grid-cols-2 lg:grid-cols-3
           gap-8 max-w-7xl
           mx-auto place-items-center"
-          >
+        >
           {/* MISIÓN */}
           <CardSec
             title="Nuestra misión"
@@ -120,18 +121,13 @@ export default function Inicio() {
 
           <Link
             to="/nosotras"
-            className="
-              bg-[#281e76]
-              text-white
-              font-semibold
-              px-6 py-3
-              rounded-2xl
-              text-lg
-              transition-all
-              hover:bg-[#B2A5FF]
-              hover:text-[#281e76]
-            "
-          >
+          className="mt-10 
+            px-6 py-3 rounded-xl font-semibold
+            hover:scale-105 hover:shadow-lg
+            inline-block bg-[#281e76] text-white text-lg
+            shadow-md transition-all duration-300 
+            hover:bg-[#cb60f1]"
+          >          
             Nosotras
           </Link>
         </div>
