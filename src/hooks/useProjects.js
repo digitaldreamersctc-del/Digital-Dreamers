@@ -1,94 +1,88 @@
-import { useState, useEffect, useCallback } from 'react'
+// /src/hooks/useProjects.js
+import { useState, useEffect } from "react";
 import {
   collection,
   addDoc,
-  query,
-  where,
-  getDocs,
   updateDoc,
   deleteDoc,
   doc,
-} from 'firebase/firestore'
-import { db } from '../firebase'
+  query,
+  onSnapshot,
+  orderBy,
+  serverTimestamp
+} from "firebase/firestore";
+import { db } from "../firebase";
 
 export function useProjects(user) {
-  const [projects, setProjects] = useState([])
-  const [loadingProjects, setLoadingProjects] = useState(true)
-  const [error, setError] = useState(null)
-
-  const fetchProjects = useCallback(async () => {
-    if (!user) {
-      setProjects([])
-      setLoadingProjects(false)
-      return
-    }
-
-    try {
-      setLoadingProjects(true)
-      setError(null)
-
-      const q = query(
-        collection(db, 'projects'),
-        where('createdBy', '==', user.uid),
-      )
-
-      const snapshot = await getDocs(q)
-      setProjects(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })))
-    } catch (err) {
-      console.error('Error al cargar proyectos:', err)
-      setError('No se pudieron cargar los proyectos')
-    } finally {
-      setLoadingProjects(false)
-    }
-  }, [user])
+  const [projects, setProjects] = useState([]);
+  const [loadingProjects, setLoadingProjects] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    fetchProjects()
-  }, [fetchProjects])
-
-  const createProject = async (project) => {
-    try {
-      await addDoc(collection(db, 'projects'), {
-        ...project,
-        createdBy: user.uid,
-        createdAt: new Date(),
-      })
-      fetchProjects()
-    } catch (err) {
-      console.error('Error al crear proyecto:', err)
-      setError('No se pudo crear el proyecto')
-      throw err
+    if (!user) {
+      setProjects([]);
+      setLoadingProjects(false);
+      return;
     }
-  }
+
+    setLoadingProjects(true);
+    const projectsRef = collection(db, "users", user.uid, "projects");
+    const q = query(projectsRef, orderBy("createdAt", "desc"));
+
+    const unsubscribe = onSnapshot(
+      q,
+      (snapshot) => {
+        setProjects(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+        setLoadingProjects(false);
+      },
+      (err) => {
+        console.error("Error al cargar proyectos:", err);
+        setError(err.message || "Error al cargar proyectos");
+        setLoadingProjects(false);
+      }
+    );
+
+    return () => unsubscribe();
+  }, [user]);
+
+  const createProject = async (data) => {
+    if (!user) throw new Error("Usuario no logeado");
+    try {
+      const docRef = await addDoc(collection(db, "users", user.uid, "projects"), {
+        ...data,
+        createdAt: serverTimestamp(),
+      });
+      return docRef;
+    } catch (err) {
+      console.error("Error creando proyecto:", err);
+      setError(err.message || "Error al crear proyecto");
+      throw err;
+    }
+  };
 
   const updateProject = async (id, data) => {
+    if (!user) throw new Error("Usuario no logeado");
     try {
-      await updateDoc(doc(db, 'projects', id), data)
-      fetchProjects()
+      const docRef = doc(db, "users", user.uid, "projects", id);
+      await updateDoc(docRef, data);
     } catch (err) {
-      console.error('Error al actualizar proyecto:', err)
-      setError('No se pudo actualizar el proyecto')
-      throw err
+      console.error("Error actualizando proyecto:", err);
+      setError(err.message || "Error al actualizar proyecto");
+      throw err;
     }
-  }
+  };
 
   const removeProject = async (id) => {
+    if (!user) throw new Error("Usuario no logeado");
     try {
-      await deleteDoc(doc(db, 'projects', id))
-      fetchProjects()
+      const docRef = doc(db, "users", user.uid, "projects", id);
+      await deleteDoc(docRef);
     } catch (err) {
-      console.error('Error al eliminar proyecto:', err)
-      setError('No se pudo eliminar el proyecto')
-      throw err
+      console.error("Error eliminando proyecto:", err);
+      setError(err.message || "Error al eliminar proyecto");
+      throw err;
     }
-  }
+  };
 
-  return {
-    projects,
-    loadingProjects,
-    error,
-    createProject,
-    updateProject,
-    removeProject,
-  }
+  return { projects, loadingProjects, error, createProject, updateProject, removeProject };
 }

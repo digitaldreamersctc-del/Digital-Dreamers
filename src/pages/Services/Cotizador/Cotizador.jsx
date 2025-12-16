@@ -5,7 +5,7 @@ import { ServiceCard } from './components/ServiceCard'
 import { PackageCard } from './components/PackageCard'
 import { Cart } from './components/Cart'
 import { Filters } from './components/Filter'
-import { useAuth } from '../../../hooks/useAuth'
+import { useAuth } from '../../../auth/AuthProvider'
 import { useCartWithFirestore } from '../../../hooks/useCartWFB'
 
 export default function Cotizador() {

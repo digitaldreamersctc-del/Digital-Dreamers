@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { useAuth } from '../../hooks/useAuth.js'
+import { useAuth } from '../../auth/AuthProvider'
 
 export default function NavBar() {
   const auth = useAuth()

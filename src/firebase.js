@@ -1,7 +1,7 @@
 // Importa las funciones necesarias de Firebase
 import { initializeApp } from 'firebase/app'
 import { getFirestore } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
+import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,3 +22,4 @@ const app = initializeApp(firebaseConfig)
 // Exporta db en formato v9 (lo que espera taskService.js)
 export const db = getFirestore(app)
 export const auth = getAuth(app)
+export const googleProvider = new GoogleAuthProvider();

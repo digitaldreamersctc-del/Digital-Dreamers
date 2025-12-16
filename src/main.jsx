@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
-import { AuthProvider } from './auth/AuthProvider C.jsx'
+import { AuthProvider } from './auth/AuthProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
 
