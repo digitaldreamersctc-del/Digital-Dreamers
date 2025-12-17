@@ -21,14 +21,13 @@ export default function NavBar() {
     <header
       className="
       bg-[#281e76] sticky top-0 z-20 shadow-md
-
     "
     >
       {/* CONTENEDOR GENERAL */}
       <div
         className="
         col-span-full
-        grid grid-cols-1 lg:grid-cols-6
+        grid grid-cols-1 lg:grid-cols-4
         items-center
         px-6 py-4
       "
@@ -51,7 +50,7 @@ export default function NavBar() {
         {/* 2 MENÚ (2 columnas desktop) */}
         <nav
           className={`
-            md:col-span-3
+            lg:col-span-2
             ${menuOpen ? 'block' : 'hidden'} lg:block
             flex
             flex-col md:flex-row
@@ -96,7 +95,7 @@ export default function NavBar() {
         {/* 3 AUTH (1 columna) */}
         <div
           className="
-          md:col-span-1.5
+          lg:col-span-1
           flex flex-col md:flex-row
           items-start md:items-center
           gap-2
@@ -105,27 +104,16 @@ export default function NavBar() {
         >
           {user ? (
             <>
-              <span className="text-[#ffee98] text-sm">
-                Hola, {user.displayName || user.email}
-              </span>
-
               <Link
                 to="/dashboard"
-                className="px-3 py-1.5 rounded bg-[#ffee98] text-[#281e76] font-semibold hover:bg-[#B2A5FF]"
+                className="px-3 py-1.5 rounded bg-[#ffee98] text-[#281e76] font-semibold hover:text-[#cb60f1]"
               >
                 Dashboard
               </Link>
 
-              <Link
-                to="/perfil"
-                className="px-3 py-1.5 rounded border border-[#ffee98] font-semibold hover:bg-[#B2A5FF] hover:text-[#281e76]"
-              >
-                Perfil
-              </Link>
-
               <button
                 onClick={logout}
-                className="px-3 py-1.5 rounded border border-[#ffee98] font-semibold hover:bg-[#B2A5FF] hover:text-[#281e76]"
+                className="px-3 py-1.5 rounded border border-[#ffee98] font-semibold hover:text-[#cb60f1] text-white"
               >
                 Salir
               </button>
