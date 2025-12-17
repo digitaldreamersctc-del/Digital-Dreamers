@@ -36,7 +36,6 @@ export default function Footer() {
               { label: 'Nosotras', to: '/nosotras' },
               { label: 'Servicios', to: '/servicios' },
               { label: 'Contacto', to: '/contacto' },
-              { label: 'Proyectos', to: '/proyectos' },
             ].map((item) => (
               <li key={item.label}>
                 <Link to={item.to} className="hover:text-[#FFF2AF] transition">
