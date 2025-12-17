@@ -13,7 +13,7 @@ export default function Portfolio() {
       : projectsData.filter((p) => p.category === filtro)
 
   return (
-    <section className="p-16">
+    <section >
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <h2 className="text-5xl text-center text-[#281e76] font-[Concert_One] py-2">
