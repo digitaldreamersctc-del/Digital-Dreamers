@@ -6,7 +6,6 @@ import CardSec from './components/SectionCard'
 export default function Inicio() {
   return (
     <div className="bg-[#B2A5FF] text-gray-800 rounded-3xl flex flex-col">
-
       {/* ================= BIENVENIDA ================= */}
       <section
         className="
@@ -17,7 +16,6 @@ export default function Inicio() {
           bg-linear-to-br from-[#B2A5FF] to-gray-50
           overflow-hidden"
       >
-
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* Texto */}
           <div className="max-w-xl text-center lg:text-left space-y-6">
@@ -25,7 +23,8 @@ export default function Inicio() {
               ¡Bienvenid@s a{' '}
               <span className="text-white drop-shadow-md">
                 Digital Dreamers
-              </span>!
+              </span>
+              !
             </h1>
 
             <p className="text-[#493D9E] text-lg sm:text-xl lg:text-2xl font-semibold">
@@ -60,7 +59,6 @@ export default function Inicio() {
           />
         </div>
       </section>
-
 
       {/* ================= BENTO ================= */}
       <section
@@ -101,7 +99,6 @@ export default function Inicio() {
         </div>
       </section>
 
-
       {/* ================= EQUIPO ================= */}
       <section
         className="
@@ -121,13 +118,13 @@ export default function Inicio() {
 
           <Link
             to="/nosotras"
-          className="mt-10 
+            className="mt-10 
             px-6 py-3 rounded-xl font-semibold
             hover:scale-105 hover:shadow-lg
             inline-block bg-[#281e76] text-white text-lg
             shadow-md transition-all duration-300 
             hover:bg-[#cb60f1]"
-          >          
+          >
             Nosotras
           </Link>
         </div>
@@ -145,7 +142,6 @@ export default function Inicio() {
       >
         <Portfolio />
       </section>
-
     </div>
   )
 }

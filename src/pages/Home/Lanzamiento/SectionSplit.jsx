@@ -69,5 +69,5 @@ export default function SectionSplit({
         </div>
       </div>
     </section>
-  );
+  )
 }

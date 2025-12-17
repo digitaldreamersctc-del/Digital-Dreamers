@@ -30,8 +30,6 @@ export default function Equipo() {
           image={`${import.meta.env.BASE_URL}images/imgT1.png`}
           title="Foto de Marcell"
         />
-        
-        
       </div>
     </div>
   )

@@ -1,13 +1,11 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 import ContactForm from '../Contact/components/ContactForm.jsx'
 import { MapPin, Phone, Mail } from 'lucide-react'
 
 export default function Contacto() {
-
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <div className="bg-[#DAD2FF] text-gray-800 rounded-3xl">
-
       {/* Hero */}
       <section className="text-center py-20 bg-white shadow-md mt-10 mb-20 px-6">
         <h1 className="text-6xl font-bold text-[#281e76] mb-6 font-[Merienda]">
@@ -24,7 +22,9 @@ export default function Contacto() {
         <div className="flex flex-col items-center gap-3 bg-white p-6 rounded-xl shadow-md border-2 border-[#281e76] hover:border-[#cb60f1] transition-all duration-300">
           <MapPin className="w-8 h-8 text-[#cb60f1]" />
           <p className="font-bold text-gray-700">
-            Carabayllo<br />Lima, Perú
+            Carabayllo
+            <br />
+            Lima, Perú
           </p>
         </div>
 
@@ -49,36 +49,36 @@ export default function Contacto() {
             digitaldreamersctc@gmail.com
           </a>
         </div>
+      </div>
+
+      {/* 📩 formulario de contacto */}
+      <section>
+        <div className="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-lg text-gray-800">
+          <ContactForm />
         </div>
+      </section>
 
-        {/* 📩 formulario de contacto */}
-        <section>
-          <div className="max-w-3xl mx-auto bg-white rounded-xl p-8 shadow-lg text-gray-800">
-            <ContactForm />
-          </div>
-        </section>
-
-        {/* 🔙 botón para regresar */}
-        <section
-          className="
+      {/* 🔙 botón para regresar */}
+      <section
+        className="
           relative
           w-full flex flex-col items-center gap-10
           px-6 sm:px-10 lg:px-24
           py-16 sm:py-20 lg:py-24
         "
-        >
-          <button
-            onClick={() => navigate("/")}
-            className="mt-10 
+      >
+        <button
+          onClick={() => navigate('/')}
+          className="mt-10 
             px-6 py-3 rounded-xl font-semibold
             hover:scale-105 hover:shadow-lg
             inline-block bg-[#281e76] text-white text-lg
             shadow-md transition-all duration-300 
               hover:bg-[#cb60f1]"
-          >
-            ← Volver al lanzamiento
-          </button>
-        </section>
-      </div>
-      )
+        >
+          ← Volver al lanzamiento
+        </button>
+      </section>
+    </div>
+  )
 }

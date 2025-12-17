@@ -6,7 +6,6 @@ import { BrowserRouter } from 'react-router-dom'
 import { AuthProvider } from './auth/AuthProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
-
   <StrictMode>
     <AuthProvider>
       <BrowserRouter basename="/Digital-Dreamers/">

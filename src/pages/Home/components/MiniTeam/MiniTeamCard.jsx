@@ -33,9 +33,7 @@ export default function CardT({
       )}
 
       <div className="p-5 text-center sm:text-left lg:col-span-2 flex flex-col justify-center">
-        <h3 className="text-[#493D9E] font-[Concert_One] text-2xl">
-          {name}
-        </h3>
+        <h3 className="text-[#493D9E] font-[Concert_One] text-2xl">{name}</h3>
         <p className="text-gray-800 font-light text-md leading-relaxed my-2">
           {description}
         </p>

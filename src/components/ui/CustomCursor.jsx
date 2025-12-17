@@ -1,26 +1,26 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react'
 
 export default function CustomCursor() {
-  const cursorRef = useRef(null);
-  const pos = useRef({ x: 0, y: 0 });
+  const cursorRef = useRef(null)
+  const pos = useRef({ x: 0, y: 0 })
 
   useEffect(() => {
     const moveCursor = (e) => {
-      pos.current.x = e.clientX;
-      pos.current.y = e.clientY;
+      pos.current.x = e.clientX
+      pos.current.y = e.clientY
 
       requestAnimationFrame(() => {
         if (cursorRef.current) {
           cursorRef.current.style.transform = `
             translate(${pos.current.x - 12}px, ${pos.current.y - 12}px)
-          `;
+          `
         }
-      });
-    };
+      })
+    }
 
-    window.addEventListener("mousemove", moveCursor);
-    return () => window.removeEventListener("mousemove", moveCursor);
-  }, []);
+    window.addEventListener('mousemove', moveCursor)
+    return () => window.removeEventListener('mousemove', moveCursor)
+  }, [])
 
   return (
     <div
@@ -34,5 +34,5 @@ export default function CustomCursor() {
         z-50
       "
     />
-  );
+  )
 }

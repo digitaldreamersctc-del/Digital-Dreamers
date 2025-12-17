@@ -5,7 +5,5 @@ export default function Servicios() {
     <div>
       <Cotizador />
     </div>
-  
-
-)
+  )
 }

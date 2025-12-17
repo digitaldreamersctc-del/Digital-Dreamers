@@ -1,9 +1,9 @@
-import { useAuth } from "../../../../auth/AuthProvider";
+import { useAuth } from '../../../../auth/AuthProvider'
 
 export default function UserProfile() {
-  const { user } = useAuth();
+  const { user } = useAuth()
 
-  if (!user) return <p>Cargando perfil...</p>;
+  if (!user) return <p>Cargando perfil...</p>
 
   return (
     <div>
@@ -24,5 +24,5 @@ export default function UserProfile() {
         </div>
       </div>
     </div>
-  );
+  )
 }

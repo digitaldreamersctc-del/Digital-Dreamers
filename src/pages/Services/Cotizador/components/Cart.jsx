@@ -14,7 +14,10 @@ export function Cart({ cart, removeItem, total, checkout, user, login }) {
       {cart.map((item) => (
         <div key={item.id} className="flex justify-between mb-2">
           <span>{item.title}</span>
-          <button onClick={() => removeItem(item.id)} className="text-[#B2A5FF]">
+          <button
+            onClick={() => removeItem(item.id)}
+            className="text-[#B2A5FF]"
+          >
             <FaTrash />
           </button>
         </div>

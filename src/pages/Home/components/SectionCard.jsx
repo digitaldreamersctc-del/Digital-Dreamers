@@ -39,9 +39,7 @@ export default function CardSec({
           {title}
         </h3>
 
-        <p className="text-gray-800 font-medium">
-          {description}
-        </p>
+        <p className="text-gray-800 font-medium">{description}</p>
       </div>
     </div>
   )

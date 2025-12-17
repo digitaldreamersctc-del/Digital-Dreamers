@@ -22,24 +22,25 @@ export default function Cotizador() {
 
   return (
     <div className="min-h-screen bg-[#DAD2FF]">
-
       <section className="text-center py-20 bg-white shadow-md mt-10 mb-20 px-6">
         <h1 className="text-6xl font-bold text-[#281e76] mb-6 font-[Merienda]">
           Cotizador de Servicios
         </h1>
         <p className="max-w-3xl mx-auto text-xl font-medium text-[#493D9E]">
-          Selecciona los servicios y paquetes que deseas para obtener una cotización personalizada.
+          Selecciona los servicios y paquetes que deseas para obtener una
+          cotización personalizada.
         </p>
       </section>
 
-      <div className='p-10 m-10'> {/* Contenido principal */}
+      <div className="p-10 m-10">
+        {' '}
+        {/* Contenido principal */}
         <Filters
           type={type}
           setType={setType}
           category={category}
           setCategory={setCategory}
         />
-
         <div className="grid grid-cols-1 md:grid-cols-6 gap-6 mt-6">
           <Cart
             cart={cart}
@@ -68,7 +69,7 @@ export default function Cotizador() {
               <section>
                 <h2 className="text-3xl text-[#281e76] mb-4 font-[Concert_One]">
                   Paquetes
-                  </h2>
+                </h2>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {filteredPackages.map((p) => (
                     <PackageCard key={p.id} pack={p} onAdd={addItem} />

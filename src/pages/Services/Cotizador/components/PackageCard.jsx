@@ -11,11 +11,13 @@ export function PackageCard({ pack, onAdd }) {
       >
         {pack.title}
       </h3>
-      {open && <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 space-y-1">
-        {pack.details.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul>}
+      {open && (
+        <ul className="list-disc pl-5 mt-2 text-sm text-gray-600 space-y-1">
+          {pack.details.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      )}
 
       <p className="mt-2 font-semibold">S/.{pack.price}</p>
       <button

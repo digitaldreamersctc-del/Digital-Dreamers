@@ -108,9 +108,7 @@ export default function Portfolio() {
                   </button>
                 </div>
 
-                <p className="text-gray-700 mt-4">
-                  {openProject.details}
-                </p>
+                <p className="text-gray-700 mt-4">{openProject.details}</p>
 
                 <div className="mt-6 flex flex-wrap gap-2">
                   {openProject.technologies.map((tech) => (

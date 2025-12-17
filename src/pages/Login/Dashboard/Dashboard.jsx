@@ -1,34 +1,34 @@
-import { useState } from "react";
-import { useAuth } from "../../../auth/AuthProvider";
-import ProjectsManager from "./components/ProjectsManager";
-import UserProfile from "./components/UserProfile";
+import { useState } from 'react'
+import { useAuth } from '../../../auth/AuthProvider'
+import ProjectsManager from './components/ProjectsManager'
+import UserProfile from './components/UserProfile'
 
 export default function Dashboard() {
-  const { user, logout } = useAuth();
-  const [activeTab, setActiveTab] = useState("projects");
+  const { user, logout } = useAuth()
+  const [activeTab, setActiveTab] = useState('projects')
 
   const tabs = [
-    { id: "profile", name: "Mi Perfil", icon: "👤" },
-    { id: "projects", name: "Mis Proyectos", icon: "📂" },
-  ];
+    { id: 'profile', name: 'Mi Perfil', icon: '👤' },
+    { id: 'projects', name: 'Mis Proyectos', icon: '📂' },
+  ]
 
   if (!user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <p className="text-gray-600 text-lg">Cargando usuario...</p>
       </div>
-    );
+    )
   }
 
   const renderContent = () => {
     switch (activeTab) {
-      case "profile":
-        return <UserProfile />;
-      case "projects":
+      case 'profile':
+        return <UserProfile />
+      case 'projects':
       default:
-        return <ProjectsManager />;
+        return <ProjectsManager />
     }
-  };
+  }
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -62,8 +62,8 @@ export default function Dashboard() {
                   className={`w-full text-left px-3 py-2 rounded-md flex items-center gap-2
                     ${
                       activeTab === tab.id
-                        ? "bg-gray-50 text-[#281e76] border-r-4 border-[#cb60f1]"
-                        : "text-[#281e76] hover:bg-gray-50"
+                        ? 'bg-gray-50 text-[#281e76] border-r-4 border-[#cb60f1]'
+                        : 'text-[#281e76] hover:bg-gray-50'
                     }`}
                 >
                   <span>{tab.icon}</span> {tab.name}
@@ -79,5 +79,5 @@ export default function Dashboard() {
         </main>
       </div>
     </div>
-  );
+  )
 }

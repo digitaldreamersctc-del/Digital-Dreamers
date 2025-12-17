@@ -1,68 +1,81 @@
-import { useState } from "react";
-import { useAuth } from "../../../../auth/AuthProvider";
-import { useProjects } from "../../../../hooks/useProjects";
-
+import { useState } from 'react'
+import { useAuth } from '../../../../auth/AuthProvider'
+import { useProjects } from '../../../../hooks/useProjects'
 
 export default function ProjectsManager() {
-  const { user } = useAuth();
-  const { projects, loadingProjects, error, createProject, updateProject, removeProject } =
-    useProjects(user);
+  const { user } = useAuth()
+  const {
+    projects,
+    loadingProjects,
+    error,
+    createProject,
+    updateProject,
+    removeProject,
+  } = useProjects(user)
 
-  const [form, setForm] = useState({ title: "", description: "" });
-  const [editingId, setEditingId] = useState(null);
-  const [editForm, setEditForm] = useState({ title: "", description: "" });
+  const [form, setForm] = useState({ title: '', description: '' })
+  const [editingId, setEditingId] = useState(null)
+  const [editForm, setEditForm] = useState({ title: '', description: '' })
 
-  if (!user) return <p>Debes iniciar sesión para ver tus proyectos.</p>;
+  if (!user) return <p>Debes iniciar sesión para ver tus proyectos.</p>
 
-  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
-  const onChangeEdit = (e) => setEditForm({ ...editForm, [e.target.name]: e.target.value });
+  const onChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
+  const onChangeEdit = (e) =>
+    setEditForm({ ...editForm, [e.target.name]: e.target.value })
 
   const startEditing = (project) => {
-    setEditingId(project.id);
-    setEditForm({ title: project.title, description: project.description || "" });
-  };
+    setEditingId(project.id)
+    setEditForm({
+      title: project.title,
+      description: project.description || '',
+    })
+  }
 
-  const cancelEdit = () => setEditingId(null);
+  const cancelEdit = () => setEditingId(null)
 
   const handleCreateProject = async (e) => {
-    e.preventDefault();
-    if (!form.title.trim()) return;
+    e.preventDefault()
+    if (!form.title.trim()) return
     try {
-      await createProject(form);
-      setForm({ title: "", description: "" });
+      await createProject(form)
+      setForm({ title: '', description: '' })
     } catch (err) {
-      console.error(err);
-      alert("Error al crear proyecto");
+      console.error(err)
+      alert('Error al crear proyecto')
     }
-  };
+  }
 
   const saveEdit = async () => {
-    if (!editingId) return;
+    if (!editingId) return
     try {
-      await updateProject(editingId, editForm);
-      setEditingId(null);
+      await updateProject(editingId, editForm)
+      setEditingId(null)
     } catch (err) {
-      console.error(err);
-      alert("Error al actualizar proyecto");
+      console.error(err)
+      alert('Error al actualizar proyecto')
     }
-  };
+  }
 
   const deleteProject = async (id) => {
-    if (!confirm("¿Eliminar este proyecto?")) return;
+    if (!confirm('¿Eliminar este proyecto?')) return
     try {
-      await removeProject(id);
+      await removeProject(id)
     } catch (err) {
-      console.error(err);
-      alert("Error al eliminar proyecto");
+      console.error(err)
+      alert('Error al eliminar proyecto')
     }
-  };
+  }
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-[#281e76]">Mis proyectos</h2>
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-[#281e76]">
+        Mis proyectos
+      </h2>
 
       {error && (
-        <p className="mb-4 text-red-700 font-medium text-sm sm:text-base">{error}</p>
+        <p className="mb-4 text-red-700 font-medium text-sm sm:text-base">
+          {error}
+        </p>
       )}
 
       <form
@@ -134,9 +147,13 @@ export default function ProjectsManager() {
               ) : (
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-0">
                   <div>
-                    <h3 className="font-semibold text-[#281e76] text-lg">{p.title}</h3>
+                    <h3 className="font-semibold text-[#281e76] text-lg">
+                      {p.title}
+                    </h3>
                     {p.description && (
-                      <p className="text-gray-600 text-sm sm:text-base mt-1">{p.description}</p>
+                      <p className="text-gray-600 text-sm sm:text-base mt-1">
+                        {p.description}
+                      </p>
                     )}
                   </div>
                   <div className="flex gap-2 mt-2 sm:mt-0">
@@ -160,5 +177,5 @@ export default function ProjectsManager() {
         </ul>
       )}
     </div>
-  );
+  )
 }

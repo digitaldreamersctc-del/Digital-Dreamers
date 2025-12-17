@@ -5,13 +5,14 @@ import {
   FaLinkedinIn,
   FaGithub,
   FaPinterestP,
-  FaMapMarkerAlt, FaPhoneAlt, FaEnvelope,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
 } from 'react-icons/fa'
 
 export default function Footer() {
   return (
     <footer className="bg-[#281e76] font-[Poppins] text-white py-16">
-
       {/* GRID */}
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
         {/* Logo */}
@@ -65,7 +66,10 @@ export default function Footer() {
           </div>
 
           <h3 className="font-[Concert_One]  text-2xl mb-2">Términos</h3>
-          <a href="#" className="text-sm opacity-90 hover:text-[#FFF2AF] transition">
+          <a
+            href="#"
+            className="text-sm opacity-90 hover:text-[#FFF2AF] transition"
+          >
             Términos de Privacidad
           </a>
         </div>
@@ -74,7 +78,7 @@ export default function Footer() {
         <div>
           <h3 className="font-[Concert_One] text-2xl mb-2">Contáctanos</h3>
           <div className="flex justify-center md:justify-start opacity-90 space-x-4 text-xl mb-6">
-            <ul     className="flex flex-col items-center md:items-start space-y-2 text-sm">
+            <ul className="flex flex-col items-center md:items-start space-y-2 text-sm">
               <li className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-white" />
                 <span>Carabayllo - Lima, Perú</span>

@@ -119,11 +119,7 @@ export default function FormularioContacto() {
   }
 
   return (
-    <section
-      id="contacto"
-      className=" flex flex-col items-center"
-    >
-
+    <section id="contacto" className=" flex flex-col items-center">
       <form
         onSubmit={handleSubmit}
         className="text-[#2E1E5B] rounded-2xl p-8 w-full  space-y-5"

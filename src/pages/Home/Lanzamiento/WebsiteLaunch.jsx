@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
-import SectionSplit from "./SectionSplit.jsx";
+import { Link } from 'react-router-dom'
+import SectionSplit from './SectionSplit.jsx'
 
 export default function Lanzamiento() {
   return (
     <div className="bg-[#DAD2FF] text-gray-800 rounded-3xl flex flex-col">
-
       {/* ================= BANNER ================= */}
       <section className="relative w-full aspect-16/5">
         <img
@@ -14,7 +13,10 @@ export default function Lanzamiento() {
         />
         <div className="absolute inset-0 bg-linear-to-tl from-[#281e76] to-[#e5afec] flex items-center justify-center">
           <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold text-center">
-            Digital Dreamers está <span className="font-[Concert_One] text-[#e5afec] text-5xl sm:text-6xl lg:text-6xl">online</span>
+            Digital Dreamers está{' '}
+            <span className="font-[Concert_One] text-[#e5afec] text-5xl sm:text-6xl lg:text-6xl">
+              online
+            </span>
           </h1>
         </div>
       </section>
@@ -29,8 +31,8 @@ export default function Lanzamiento() {
         "
       >
         <p className="max-w-3xl mx-auto text-[#493D9E] text-xl sm:text-2xl font-semibold">
-          Presentamos oficialmente a <strong>Digital Dreamers</strong>, un equipo
-          creativo que une diseño, tecnología y colaboración para crear
+          Presentamos oficialmente a <strong>Digital Dreamers</strong>, un
+          equipo creativo que une diseño, tecnología y colaboración para crear
           soluciones digitales con identidad y propósito.
         </p>
 
@@ -65,13 +67,13 @@ export default function Lanzamiento() {
             🚀 Hoy presentamos oficialmente a <strong>Digital Dreamers</strong>,
             un equipo creativo enfocado en el desarrollo de experiencias
             digitales modernas y funcionales 💻✨
-            <br /><br />
+            <br />
+            <br />
             Trabajamos con pasión, organización y creatividad para transformar
             ideas en proyectos digitales con propósito.
           </p>
         </div>
       </section>
-
 
       {/* ================= SECCIONES ALTERNADAS ================= */}
 
@@ -84,7 +86,6 @@ export default function Lanzamiento() {
   "
       >
         <div className="flex flex-col gap-20">
-
           <SectionSplit
             title="En el trabajo..."
             description="Aplicamos metodologías ágiles, comunicación constante y procesos claros. Nos adaptamos a cada cliente y proyecto para lograr resultados funcionales, estéticos y alineados a tus objetivos."
@@ -103,23 +104,53 @@ export default function Lanzamiento() {
             description="Trabajamos con una mirada humana, creativa y estratégica. Cada proyecto nace del diálogo, crece con organización y se construye con atención al detalle, buscando impacto real y sostenible."
             image={`${import.meta.env.BASE_URL}images/lanzamiento1.png`}
           />
-
         </div>
       </section>
 
-
       {/* 🌟 Sección Servicios */}
       <section className="w-full bg-linear-to-b from-[#DAD2FF] to-gray-50 py-18 px-6 text-center">
-        <h2 className="text-4xl text-[#281e76] mb-10 font-[Concert_One]">¡Te ayudamos! Conoce nuestros servicios</h2>
+        <h2 className="text-4xl text-[#281e76] mb-10 font-[Concert_One]">
+          ¡Te ayudamos! Conoce nuestros servicios
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {[
-            { icon: "🎨", title: "Diseño UX/UI", text: "Diseñamos experiencias digitales atractivas, intuitivas y centradas en el usuario.", bg: "bg-white" },
-            { icon: "💻", title: "Desarrollo Web", text: "Desde páginas informativas hasta plataformas dinámicas, creamos soluciones a medida.", bg: "bg-white" },
-            { icon: "🚀", title: "Estrategia Digital", text: "Te guiamos en marketing, redes sociales y posicionamiento online.", bg: "bg-white" },
-            { icon: "🤖", title: "Integración con IA", text: "Implementamos herramientas de inteligencia artificial para potenciar tu negocio.", bg: "bg-white" },
-            { icon: "🌍", title: "Consultoría en Diversidad Tech", text: "Fomentamos equipos inclusivos y entornos tecnológicos más diversos.", bg: "bg-white" },
-            { icon: "📚", title: "Formación y Workshops", text: "Capacitaciones prácticas en programación, diseño y herramientas digitales.", bg: "bg-white" },
+            {
+              icon: '🎨',
+              title: 'Diseño UX/UI',
+              text: 'Diseñamos experiencias digitales atractivas, intuitivas y centradas en el usuario.',
+              bg: 'bg-white',
+            },
+            {
+              icon: '💻',
+              title: 'Desarrollo Web',
+              text: 'Desde páginas informativas hasta plataformas dinámicas, creamos soluciones a medida.',
+              bg: 'bg-white',
+            },
+            {
+              icon: '🚀',
+              title: 'Estrategia Digital',
+              text: 'Te guiamos en marketing, redes sociales y posicionamiento online.',
+              bg: 'bg-white',
+            },
+            {
+              icon: '🤖',
+              title: 'Integración con IA',
+              text: 'Implementamos herramientas de inteligencia artificial para potenciar tu negocio.',
+              bg: 'bg-white',
+            },
+            {
+              icon: '🌍',
+              title: 'Consultoría en Diversidad Tech',
+              text: 'Fomentamos equipos inclusivos y entornos tecnológicos más diversos.',
+              bg: 'bg-white',
+            },
+            {
+              icon: '📚',
+              title: 'Formación y Workshops',
+              text: 'Capacitaciones prácticas en programación, diseño y herramientas digitales.',
+              bg: 'bg-white',
+            },
           ].map((servicio, index) => (
             <div
               key={index}
@@ -133,7 +164,6 @@ export default function Lanzamiento() {
           ))}
         </div>
       </section>
-
 
       {/* ================= CTA FINAL ================= */}
       <section
@@ -149,7 +179,8 @@ export default function Lanzamiento() {
         </h2>
 
         <p className="text-xl mb-10 max-w-2xl mx-auto">
-          Descubre quiénes somos y cómo convertimos ideas en experiencias digitales.
+          Descubre quiénes somos y cómo convertimos ideas en experiencias
+          digitales.
         </p>
 
         <Link
@@ -168,7 +199,6 @@ export default function Lanzamiento() {
           Conócenos
         </Link>
       </section>
-
     </div>
-  );
+  )
 }
